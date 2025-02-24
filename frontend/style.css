@@ -1,0 +1,31 @@
+body{
+background-color: beige;
+}
+
+#container{
+    margin: auto;
+    padding: 100px 100px;
+    background-color: aliceblue;
+    width: 30em;
+    height: 50%;
+    text-align: center;
+}
+
+#container input{
+    padding: 10px;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+#container button{
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+
+}
+
+#container button:hover{
+    cursor: pointer;
+}
