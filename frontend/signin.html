@@ -8,7 +8,7 @@
   </head>
 </html>
 <body>
-  <div id="container">
+  <div class="container">
     <h1>DevNotes</h1>
     <input type="text" placeholder="Enter your email" id="email" /><br /><br />
     <input
@@ -18,11 +18,16 @@
     /><br /><br />
     <button onclick="signin()">SignIn</button><br /><br />
   </div>
-  <div id="show"></div>
+  <div class="container"><div id="show"></div></div>
   <script>
     async function signin() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
+      if (!email || !password) {
+        document.getElementById("show").innerText =
+          "Please enter email and password.";
+        return;
+      }
       const signin = await fetch("http://localhost:3001/signin", {
         method: "POST",
         headers: {
@@ -34,7 +39,15 @@
         }),
       });
       const response = await signin.json();
-      document.getElementById("show").innerHTML = response.token;
+      const parent = document.getElementById("show");
+      parent.innerHTML = response.token;
+      const child = document.createElement("a");
+      child.setAttribute(
+        "href",
+        "C:\\Users\\anike\\Desktop\\100xDevs\\selfProjects\\DevNotes–ASecureNote-TakingApp\\frontend\\courses.html"
+      );
+      child.innerHTML = "Courses";
+      parent.appendChild(child);
     }
   </script>
 </body>

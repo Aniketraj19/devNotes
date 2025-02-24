@@ -1,31 +1,88 @@
-body{
-background-color: beige;
-}
-
-#container{
-    margin: auto;
-    padding: 100px 100px;
-    background-color: aliceblue;
-    width: 30em;
-    height: 50%;
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
     text-align: center;
+    display: flex;
+    /* justify-content: center; */flex-direction: column;
+    align-items: center;
+    height: 100vh;
 }
 
-#container input{
-    padding: 10px;
-    border-color: black;
-    border-width: 1px;
-    border-radius: 10px;
+/* Main container */
+.container {
+    background-color: white;
+    margin-top: 30px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-#container button{
-    background-color: black;
+/* Input styling */
+.container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.container input:focus {
+    outline: none;
+    border-color: dodgerblue;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+/* Button styling */
+.container button {
+    background-color: dodgerblue;
     color: white;
-    padding: 10px 30px;
-    border-radius: 10px;
-
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
 }
 
-#container button:hover{
-    cursor: pointer;
+.container button:hover {
+    background-color: #1e90ff;
+    transform: translateY(-2px);
+}
+
+/* Token display box */
+#show {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e6f7ff;
+    color: #0077cc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+    word-wrap: break-word;
+    /* display: none; Hidden initially */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px;
+        width: 90%;
+    }
+
+    #show {
+        width: 100%;
+    }
 }
