@@ -37,4 +37,24 @@ route.post("/signup", async (req, res) => {
   }
 });
 
+route.post("/signin", async (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+  const signin = await User.findOne({
+    email: email,
+    password: password,
+  });
+  if (!signin) {
+    res.status(404).json({
+      msg: "User not found",
+    });
+  } else {
+    const token = jwt.sign(password, jwtPassword);
+    res.status(200).json({
+      msg: "signin successfull",
+      token: token,
+    });
+  }
+});
+
 route.listen(3001);
